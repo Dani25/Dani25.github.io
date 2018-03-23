@@ -1,3 +1,4 @@
+document.getElementById("id_business_level").innerHTML = "Business version =2018.03.23"
 setInterval(deseneaza,30);
 var y = 0;
 var directie = 1;
