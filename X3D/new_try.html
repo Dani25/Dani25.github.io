@@ -1,0 +1,875 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- =================================================================== -->
+<!-- embedded X3D scene appears after html/head/script and style entries -->
+<!-- =================================================================== -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>SweetHomeLowDetail.x3d (X3dToX3dom.xslt X3DOM)</title>
+      <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge"/>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+      <meta name="generator"
+            content="http://www.web3d.org/x3d/stylesheets/X3dToX3dom.xslt"/>
+      <!-- Numbered X3DOM release versions: http://www.x3dom.org/download -->
+      <!-- Developer X3DOM release version: http://www.x3dom.org/download/dev -->
+      <link rel="stylesheet"
+            type="text/css"
+            href="http://www.x3dom.org/download/dev/x3dom.css"/>
+      <script type="text/javascript"
+              src="http://www.x3dom.org/download/dev/x3dom-full.js"/>
+      <meta name="warning"
+            content="Webfonts must be loaded prior to using Text node in X3D scene... see http://x3dom.org/x3dom/example/x3dom_text.html"/>
+      <!-- X3DOM needs Web Fonts when an X3D Text node is included -->
+      <!-- adapted from http://x3dom.org/x3dom/example/x3dom_text.html and http://web.mit.edu/jmorzins/www/fonts.html -->
+      <style type="text/css">
+/* ============================================================================= */
+@font-face {
+  font-family: 'SERIF'; /* default original */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roman'), url('Roman.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SERIF'; /* default alternate */
+  font-style: normal;
+  font-weight: 700;
+  src: local('Times New Roman'), local('TimesNewRoman'), url('Times New Roman.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'SANS'; /* default original */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial'), url('Arial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'SANS'; /* default alternate */
+  font-style: normal;
+  font-weight: 400;
+  src: local('Helvetica'), url('Helvetica.ttf') format('truetype');
+}
+/* ============================================================================= */
+@font-face {
+  font-family: 'TYPEWRITER'; /* default original */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier'), url('Courier.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TYPEWRITER'; /* default alternate */
+  font-style: normal;
+  font-weight: 900;
+  src: local('Courier New'), url('Courier New.ttf') format('truetype');
+}
+/* ============================================================================= */
+</style>
+      <style type="text/css" media="screen, print">
+.webfont { font-size:200%; font-family:'TYPEWRITER'; color:green;} /* Conversion TODO font families: SANS SERIF TYPEWRITER */
+</style>
+      <!-- Button zoom adapted from http://x3dom.org/docs/dev/tutorial/styling.html -->
+      <style type="text/css">
+
+html {width:100%;height:100%;margin:0;padding:0;}
+body {margin:0;padding:10px;width:100%;height:100%;}
+
+#rootX3dElement {
+    height: 450px;
+    width:  800px;
+    border: none;
+    display: block;
+    position:relative;
+    background:#000;
+}
+
+#toggleZoomButton {
+    position: absolute;
+    float: left;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    width: 10em;
+    height: 2em;
+    border: none;
+    background-color: #202021;
+    color: #ccc;
+}
+
+#toggleZoomButton:hover {
+    background-color:blue;
+}
+</style>
+      <!-- http://x3dom.org/docs/dev/api.html and http://x3dom.org/docs/dev/configuration.html -->
+      <script type="text/javascript">
+var zoomed = false;
+var showStatistics = false;
+var showDebugLog   = true;
+
+function toggleZoom(button) {
+
+        var new_height;
+        var new_width;
+        var x3d_element;
+        
+        htmlBody       = document.getElementById('htmlBody');
+        htmlPageHeader = document.getElementById('htmlPageHeader');
+        htmlPageFooter = document.getElementById('htmlPageFooter');
+        x3d_element    = document.getElementById('rootX3dElement');
+
+        if (zoomed) // previous value
+        {
+                // unzoom
+                new_height = "450px";
+                new_width  = "800px";
+                button.innerHTML = "Zoom";
+                htmlPageHeader.style.display = "table-row";
+                htmlPageFooter.style.display = "table-row";
+                document.getElementById('checkBoxCell').style="text-align:right";
+                htmlBody.style.padding = "10px";
+                x3d_element.showStat   = showStatistics;
+                x3d_element.showLog    = showDebugLog;
+                x3d_element.runtime.debug(showDebugLog);
+                document.getElementById("details").hidden = (!showDebugLog);
+        } else {
+                // zoom
+                new_height = "100%";
+                new_width  = "100%";
+                button.innerHTML = "Unzoom";
+                htmlPageHeader.style.display = "none";
+                htmlPageFooter.style.display = "none";
+                htmlBody.style.padding = "0px";
+                x3d_element.showStat   = false;
+                x3d_element.showLog    = false;
+                x3d_element.runtime.debug(false);
+                document.getElementById("details").hidden = true;
+                // TODO how to hide browser interface?
+        }
+        zoomed = !zoomed; // toggle
+
+        x3d_element.style.height = new_height;
+        x3d_element.style.width  = new_width;
+}
+                    
+    // Browser information table adapted from http://www.w3schools.com/js/js_window_navigator.asp
+    
+    document.addEventListener("DOMContentLoaded", function()
+    {
+        document.getElementById("browserCodeName"      ).innerHTML = navigator.appCodeName;
+        document.getElementById("browserAppName"       ).innerHTML = navigator.appName;
+        document.getElementById("browserAppVersion"    ).innerHTML = navigator.appVersion;
+        document.getElementById("browserCookieEnabled" ).innerHTML = navigator.cookieEnabled;
+        document.getElementById("browserPlatform"      ).innerHTML = navigator.platform;
+        document.getElementById("browserUserAgent"     ).innerHTML = navigator.userAgent;
+    if (navigator.systemLanguage)
+        document.getElementById("browserSystemLanguage").innerHTML = navigator.systemLanguage;
+    else
+        document.getElementById("browserSystemLanguage").innerHTML = navigator.language;
+    }, false);
+
+function toggleOverlayStatistics()
+{
+        showStatistics = !showStatistics; // toggle
+        x3d_element = document.getElementById('rootX3dElement');
+        x3d_element.runtime.statistics(showStatistics);
+}
+function toggleShowDebugLogs()
+{
+        showDebugLog  = !showDebugLog; // toggle
+        x3d_element = document.getElementById('rootX3dElement');
+        x3d_element.runtime.debug(showDebugLog);
+        document.getElementById("details").hidden = (!showDebugLog);
+}
+</script>
+   </head>
+   <body id="htmlBody">
+      <table style="width:96%" id="htmlPageHeader">
+         <tr>
+            <td style="text-align:left;">
+               <h2>SweetHomeLowDetail.x3d</h2>
+            </td>
+            <td id="checkBoxCell" style="text-align:right"> (<a href="http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeLowDetail.x3d"
+                  title="View .x3d scene">.x3d scene</a>, 
+<a href="http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeLowDetail.html"
+                  title="View .html pretty-print source">pretty-print source</a>, 
+<input id="checkBoxOverlayStatistics"
+                      type="checkbox"
+                      value="Overlay scene statistics"
+                      onclick="toggleOverlayStatistics();"/>
+               <span title="Overlay scene performance statistics">statistics</span>, 
+<input id="checkBoxShowDebugLogs"
+                      type="checkbox"
+                      value="Display debugger logs"
+                      checked="checked"
+                      onclick="toggleShowDebugLogs();"/>
+               <span title="Show meta information and debug logs">info &amp; logs</span>, <a href="http://www.x3dom.org" onclick="target='_blank';">X3DOM Player</a>)</td>
+         </tr>
+         <tr>
+            <td colspan="2">
+               <p>
+                  <span class="webfont">Model of one of the housing types in La Mesa Housing Area. The model is mostly in scale.this file does not contain the detailes.</span>
+               </p>
+            </td>
+         </tr>
+      </table>
+      <div>
+<!-- ================================ -->
+<!-- embedded X3D scene appears here: -->
+<!-- Conversion note: the following HTML button is overlaid on top of the page -->
+         <button id="toggleZoomButton" onclick="toggleZoom(this); return false;">Zoom</button>
+<X3D id='rootX3dElement' showStat='false' showLog='true' showProgress='bar'
+ profile='Immersive' version='3.0' noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+<head>
+<meta content='SweetHomeLowDetail.x3d' name='title'/>
+<meta content='La Mesa Military Housing Model, Engin UZUNCAOVA [August, 2001]' name='creator'/>
+<meta content='Engin UZUNCAOVA' name='translator'/>
+<meta content='16 September 2001' name='created'/>
+<meta content='13 January 2014' name='modified'/>
+<meta content='Model of one of the housing types in La Mesa Housing Area. The model is mostly in scale.this file does not contain the detailes.' name='description'/>
+<meta content='http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeLowDetail.x3d' name='identifier'/>
+<meta content='http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHome.x3d' name='reference'/>
+<meta content='http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeFullDetail.x3d' name='reference'/>
+<meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
+<meta content='../license.html' name='license'/>
+</head>
+<Scene>
+<NavigationInfo avatarSize='0.01 1.7 0.2' headlight='false' speed='2' type='&quot;EXAMINE&quot;'/>
+<Background backUrl='&quot;urn:web3d:media:textures/panoramas/ocean_3_back.jpg&quot; &quot;ocean_3_back.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_back.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_back.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_back.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_back.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_back.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_back.jpg&quot;' bottomUrl='&quot;urn:web3d:media:textures/panoramas/ocean_3_bottom.jpg&quot; &quot;ocean_3_bottom.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_bottom.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_bottom.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_bottom.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_bottom.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_bottom.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_bottom.jpg&quot;' frontUrl='&quot;urn:web3d:media:textures/panoramas/ocean_3_front.jpg&quot; &quot;ocean_3_front.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_front.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_front.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_front.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_front.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_front.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_front.jpg&quot;' groundAngle='0.1 1.309 1.570796' groundColor='0 0 0 0 0.1 0.3 0 0.2 0.5 0 0.3 0.8' leftUrl='&quot;urn:web3d:media:textures/panoramas/ocean_3_left.jpg&quot; &quot;ocean_3_left.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_left.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_left.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_left.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_left.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_left.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_left.jpg&quot;' rightUrl='&quot;urn:web3d:media:textures/panoramas/ocean_3_right.jpg&quot; &quot;ocean_3_right.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_right.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_right.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_right.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_right.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_right.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_right.jpg&quot;' skyAngle='0.1 0.15 1.309 1.571' skyColor='0.4 0.4 0.1 0.4 0.4 0.1 0 0.1 0.3 0 0.2 0.6 0.8 0.8 0.8' topUrl='&quot;urn:web3d:media:textures/panoramas/ocean_3_top.jpg&quot; &quot;ocean_3_top.jpg&quot; &quot;http://www.web3d.org/WorkingGroups/media/textures/panoramas/ocean_3_top.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/UniversalMediaPanoramas/ocean_3_top.jpg&quot; &quot;http://www.web3dmedia.com/UniversalMedia/textures/panoramas/ocean_3_top.jpg&quot; &quot;http://www.officetowers.com/UniversalMedia/textures/panoramas/ocean_3_top.jpg&quot; &quot;http://geometrek.com/UniversalMedia/textures/panoramas/ocean_3_top.jpg&quot; &quot;http://www.sc.ehu.es/ccwgamoa/UniversalMedia/textures/panoramas/ocean_3_top.jpg&quot;'/>
+<Group DEF='FLOOR'>
+<Shape DEF='Floor'>
+<Appearance DEF='WALL'>
+<ImageTexture url='&quot;WallColorTexture.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/WallColorTexture.jpg&quot;'/>
+</Appearance>
+<Extrusion convex='false' crossSection='-6.225 4.8 -6.225 -4.8 6.225 -4.8 6.225 2.1 1.425 2.1 1.425 4.8 -6.225 4.8' solid='false' spine='0 0.1 0 0 0.15 0'/>
+</Shape>
+</Group>
+<Group DEF='FRONT_SIDE'>
+<Transform DEF='BABY_STUDY_ROOM' translation='-2.4 0.15 4.725'>
+<Group DEF='FRONT_WALLS'>
+<Transform DEF='FRONT_LOWER' translation='0 0.4 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='7.65 0.80 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='FRONT_LEFT' translation='-3.2 1.45 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='1.25 1.3 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='FRONT_UPPER' translation='0 2.3 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='7.65 0.4 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='FRONT_MIDDLE' translation='0.125 1.45 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='1.70 1.3 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='FRONT_RIGHT' translation='3.325 1.45 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='1 1.3 0.15'/>
+</Shape>
+</Transform>
+</Group>
+<Transform translation='-1.65 0.83 0'>
+<Group DEF='WINDOW'>
+<Shape>
+<Appearance DEF='WINDOWFRAME'>
+<Material diffuseColor='.2 .2 .2'/>
+</Appearance>
+<Box size='1.85 0.06 0.06'/>
+</Shape>
+<Transform translation='0 1.24 0'>
+<Shape>
+<Appearance USE='WINDOWFRAME'/>
+<Box size='1.85 0.06 0.06'/>
+</Shape>
+</Transform>
+<Transform translation='-0.895 0.62 0'>
+<Shape>
+<Appearance USE='WINDOWFRAME'/>
+<Box size='0.06 1.18 0.06'/>
+</Shape>
+</Transform>
+<Transform translation='0.895 0.62 0'>
+<Shape>
+<Appearance USE='WINDOWFRAME'/>
+<Box size='0.06 1.18 0.06'/>
+</Shape>
+</Transform>
+<Transform translation='0 0.62 0'>
+<Shape>
+<Appearance USE='WINDOWFRAME'/>
+<Box size='0.06 1.18 0.06'/>
+</Shape>
+</Transform>
+<Transform DEF='WINDOWGLASS' translation='0 0.62 0'>
+<Shape>
+<Appearance DEF='GLASS'>
+<Material emissiveColor='0.757 0.804 0.804' shininess='0.5'/>
+</Appearance>
+<Box size='1.73 1.18 0.005'/>
+</Shape>
+</Transform>
+</Group>
+</Transform>
+<Transform translation='1.9 0.83 0'>
+<Group USE='WINDOW'/>
+</Transform>
+</Transform>
+<Transform DEF='DOOR_SIDEWALL' translation='1.35 1.4 3.25'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='0.15 2.5 2.82'/>
+</Shape>
+</Transform>
+<Transform DEF='KITCHEN_FRONT' translation='4.65 0.85 2.025'>
+<Group DEF='KITCHEN_WALLS'>
+<Shape DEF='UNDER_WINDOW'>
+<Appearance USE='WALL'/>
+<Box size='3.15 1.4 0.15'/>
+</Shape>
+<Transform DEF='LEFTOFWINDOW' translation='-1.175 1.25 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='0.8 1.1 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='RIGHTOFWINDOW' translation='1.325 1.25 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='0.5 1.1 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='UPPEROFWINDOW' translation='0.15 1.6 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='1.85 0.4 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='LEFTOFDOOR' translation='-3.2 0.55 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='0.05 2.5 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='UPPEROFDOOR' translation='-2.4 1.6 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='1.65 0.4 0.15'/>
+</Shape>
+</Transform>
+</Group>
+<Transform DEF='FRONT_DOOR' translation='-2.725 0.35 0'>
+<Transform DEF='FrontDoor' center='-0.45 0 0'>
+<Shape>
+<Box size='0.9 2.1 0.1'/>
+<Appearance DEF='DOOR_COLOR'>
+<ImageTexture url='&quot;DoorColor.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/DoorColor.jpg&quot;'/>
+</Appearance>
+</Shape>
+<Transform DEF='DOOR_KNOP1' translation='0.2 0 0.08'>
+<Shape DEF='DOOR_LOCK'>
+<Sphere radius='0.05'/>
+<Appearance DEF='DOOR_LOCK_COLOR'>
+<ImageTexture DEF='DoorKnobColor' url='&quot;DoorKnobColor.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/DoorKnobColor.jpg&quot;'/>
+</Appearance>
+</Shape>
+</Transform>
+<Transform DEF='DOOR_KNOP2' translation='0.2 0 -0.08'>
+<Shape USE='DOOR_LOCK'/>
+</Transform>
+</Transform>
+</Transform>
+<Transform DEF='KITCHEN_WINDOW' scale='1 0.54 1' translation='0.15 0.72 0'>
+<Group USE='WINDOW'/>
+</Transform>
+<Transform DEF='DOORSIDE' translation='-2.225 0.35 0'>
+<Transform DEF='LEFTBAR' translation='0.01 0 0'>
+<Shape>
+<Appearance USE='DOOR_COLOR'/>
+<Box size='0.1 2.1 0.1'/>
+</Shape>
+</Transform>
+<Transform DEF='RIGHTBAR' translation='0.6 0 0'>
+<Shape>
+<Appearance USE='DOOR_COLOR'/>
+<Box size='0.1 2.1 0.1'/>
+</Shape>
+</Transform>
+<Transform DEF='UPPERBAR' translation='0.325 1.0 0'>
+<Shape>
+<Appearance USE='DOOR_COLOR'/>
+<Box size='0.55 0.1 0.1'/>
+</Shape>
+</Transform>
+<Transform DEF='LOWERBAR' translation='0.325 -1.0 0'>
+<Shape>
+<Appearance USE='DOOR_COLOR'/>
+<Box size='0.55 0.1 0.1'/>
+</Shape>
+</Transform>
+<Transform DEF='MIDDLE1BAR' translation='0.325 0.325 0'>
+<Shape>
+<Appearance USE='DOOR_COLOR'/>
+<Box size='0.55 0.05 0.1'/>
+</Shape>
+</Transform>
+<Transform DEF='MIDDLE2BAR' translation='0.325 -0.325 0'>
+<Shape>
+<Appearance USE='DOOR_COLOR'/>
+<Box size='0.55 0.05 0.1'/>
+</Shape>
+</Transform>
+<Group DEF='SIDEGLASS'>
+<Transform translation='0.325 0.65 0'>
+<Shape>
+<Appearance USE='GLASS'/>
+<Box size='0.5 0.6 0.005'/>
+</Shape>
+</Transform>
+<Transform translation='0.325 0 0'>
+<Shape>
+<Appearance USE='GLASS'/>
+<Box size='0.5 0.6 0.005'/>
+</Shape>
+</Transform>
+<Transform translation='0.325 -0.65 0'>
+<Shape>
+<Appearance USE='GLASS'/>
+<Box size='0.5 0.6 0.005'/>
+</Shape>
+</Transform>
+</Group>
+</Transform>
+</Transform>
+</Group>
+<Transform DEF='RIGHT_SIDE' rotation='0 1 0 1.57' translation='6.15 1.4 0.95'>
+<Shape DEF='WALLBEFOREDOOR'>
+<Appearance USE='WALL'/>
+<Box size='2.32 2.5 0.15'/>
+</Shape>
+<Transform DEF='WALLAFTERDOOR' translation='3.86 0 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='3.8 2.5 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='WALLOVERDOOR' translation='1.56 1.05 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='0.84 0.4 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='KITCHEN_DOOR' translation='1.56 -0.85 0'>
+<Transform DEF='KitchenDoor' center='0.4 0 0'>
+<Shape>
+<Box size='0.8 0.8 0.1'/>
+<Appearance USE='DOOR_COLOR'/>
+</Shape>
+<Transform translation='-0.325 1.05 0'>
+<Shape DEF='BAR'>
+<Box size='0.15 1.3 0.1'/>
+<Appearance USE='DOOR_COLOR'/>
+</Shape>
+</Transform>
+<Transform translation='0.325 1.05 0'>
+<Shape USE='BAR'/>
+</Transform>
+<Transform translation='0 1.625 0'>
+<Shape>
+<Box size='0.5 0.15 0.1'/>
+<Appearance USE='DOOR_COLOR'/>
+</Shape>
+</Transform>
+<Transform DEF='DOORGLASS' translation='0 0.975 0'>
+<Shape>
+<Box size='0.5 1.15 0.005'/>
+<Appearance USE='GLASS'/>
+</Shape>
+</Transform>
+<Transform translation='-0.25 0.3 0.08'>
+<Shape USE='DOOR_LOCK'/>
+</Transform>
+<Transform translation='-0.25 0.3 -0.08'>
+<Shape USE='DOOR_LOCK'/>
+</Transform>
+</Transform>
+</Transform>
+</Transform>
+<Transform DEF='LEFTSIDE' rotation='0 1 0 -1.57' translation='-6.15 1.4 2.675'>
+<Shape DEF='RIGHT_OF_WINDOW'>
+<Appearance USE='WALL'/>
+<Box size='3.95 2.5 0.15'/>
+</Shape>
+<Transform DEF='UPPER_OF_WINDOW' translation='-4.725 1.05 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='5.5 0.4 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='UNDERWINDOW' translation='-4.725 -0.55 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='5.5 1.4 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='LEFT_OF_WINDOW' translation='-5.225 0.5 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='4.5 0.7 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='BATHROOM_WINDOW' scale='0.54 0.54 1' translation='-2.475 0.16 0'>
+<Group USE='WINDOW'/>
+</Transform>
+</Transform>
+<Transform DEF='BACKSIDE' rotation='0 1 0 3.14' translation='-0.675 1.4 -4.725'>
+<Transform DEF='RIGHTMOSTWALL' translation='5 0 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='1.1 2.5 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='RIGHTWINDOW' translation='3.525 -0.42 0'>
+<Group USE='WINDOW'/>
+</Transform>
+<Transform DEF='RIGHTUPPERWALL' translation='0.775 1.05 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='7.35 0.4 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='RIGHTLOWERWALL' translation='0.775 -0.85 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='7.35 0.8 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='RIGHTMIDDLEWALL' translation='1.55 0.2 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='2.1 1.3 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='MIDDLEWINDOW' scale='1.297 1 1' translation='-0.7 -0.42 0'>
+<Group USE='WINDOW'/>
+</Transform>
+<Transform DEF='MIDDLEWALL' translation='-2.4 0.2 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='1 1.3 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='BACK_DOOR' translation='-3.35 -0.2 0'>
+<Transform DEF='BackDoor' center='-0.45 0 0'>
+<Shape>
+<Box size='0.9 2.1 0.1'/>
+<Appearance USE='DOOR_COLOR'/>
+</Shape>
+<Transform DEF='DOORKNOP1' translation='0.2 0 0.08'>
+<Shape USE='DOOR_LOCK'/>
+</Transform>
+<Transform DEF='DOORKNOP2' translation='0.2 0 -0.08'>
+<Shape USE='DOOR_LOCK'/>
+</Transform>
+</Transform>
+</Transform>
+<Transform DEF='LEFTUPPERWALL' translation='-4.825 1.05 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='3.85 0.4 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='LEFT_OF_DOOR' translation='-4.075 -0.2 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='0.55 2.1 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='LEFTLOWERWALL' translation='-5.55 -0.85 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='2.4 0.8 0.15'/>
+</Shape>
+</Transform>
+<Transform DEF='LEFTWINDOW' translation='-5.275 -0.42 0'>
+<Group USE='WINDOW'/>
+</Transform>
+<Transform DEF='LEFTMOSTWALL' translation='-6.475 0.2 0'>
+<Shape>
+<Appearance USE='WALL'/>
+<Box size='0.55 1.3 0.15'/>
+</Shape>
+</Transform>
+</Transform>
+<Group DEF='ROOF'>
+<Transform DEF='ROOF_TRANSFORM' translation='0 2.64 0'>
+<Shape>
+<Appearance>
+<ImageTexture url='&quot;RoofTexture.jpg&quot; &quot;http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/RoofTexture.jpg&quot;'/>
+</Appearance>
+<Extrusion convex='false' creaseAngle='0.785' crossSection='-6.525 5.1 -6.525 -5.1 6.525 -5.1 6.525 2.4 3.225 2.4 3.225 5.1 -6.525 5.1' scale='1.0 1.0 1.01 1.01 0.01 0.01' solid='false' spine='0 0 0 0 0.2 0 0 0.8 0'/>
+</Shape>
+</Transform>
+<Shape DEF='CEILING_FACESET'>
+<Appearance USE='WALL'/>
+<IndexedFaceSet ccw='false' convex='false' coordIndex='0 1 2 3 4 5 6' solid='false'>
+<Coordinate point='-6.2 2.63 4.7 -6.2 2.63 -4.7 6.2 2.63 -4.7 6.2 2.63 2.0 1.4 2.63 2.0 1.4 2.63 4.7 -6.2 2.63 4.7'/>
+</IndexedFaceSet>
+</Shape>
+</Group>
+</Scene>
+</X3D>
+
+<!-- ================================ -->
+</div>
+      <div id="details">
+         <p style="clear:both;">&nbsp;</p>
+         <table style="border:0px solid; border-spacing:0px; margin:auto; margin-top:20px;margin-left:5%;">
+            <tr style="background-color:silver; border-color:silver;">
+               <th style="text-align:right;">X3D&nbsp;Scene </th>
+               <th style="text-align:left;"> &nbsp; </th>
+               <th style="text-align:left;"> Metadata </th>
+            </tr>
+            <tr style="background-color:silver; border-color:silver;">
+               <td style="text-align:right;color:green;">
+                  <i>archive</i>
+               </td>
+               <td> &nbsp; </td>
+               <td>
+                  <i>
+                     <a href="http://www.web3d.org/x3d/content/examples/Basic/StudentProjects">http://www.web3d.org/x3d/content/examples/Basic/StudentProjects</a>
+                  </i>
+               </td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">title</td>
+               <td> &nbsp; </td>
+               <td>
+                  <a href="SweetHomeLowDetail.x3d">SweetHomeLowDetail.x3d</a>
+               </td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">creator</td>
+               <td> &nbsp; </td>
+               <td>La Mesa Military Housing Model, Engin UZUNCAOVA [August, 2001]</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">translator</td>
+               <td> &nbsp; </td>
+               <td>Engin UZUNCAOVA</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">created</td>
+               <td> &nbsp; </td>
+               <td>16 September 2001</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">modified</td>
+               <td> &nbsp; </td>
+               <td>13 January 2014</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">description</td>
+               <td> &nbsp; </td>
+               <td>Model of one of the housing types in La Mesa Housing Area. The model is mostly in scale.this file does not contain the detailes.</td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">identifier</td>
+               <td> &nbsp; </td>
+               <td>
+                  <a href="http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeLowDetail.x3d">http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeLowDetail.x3d</a>
+               </td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td>
+                  <a href="http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHome.x3d">http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHome.x3d</a>
+               </td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">reference</td>
+               <td> &nbsp; </td>
+               <td>
+                  <a href="http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeFullDetail.x3d">http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/SweetHomeFullDetail.x3d</a>
+               </td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">generator</td>
+               <td> &nbsp; </td>
+               <td>X3D-Edit 3.3, <a href="https://savage.nps.edu/X3D-Edit">https://savage.nps.edu/X3D-Edit</a>
+               </td>
+            </tr>
+            <tr>
+               <td style="text-align:right;color:green">license</td>
+               <td> &nbsp; </td>
+               <td>
+                  <a href="../license.html">../license.html</a>
+               </td>
+            </tr>
+            <tr>
+               <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr style="background-color:silver;border-color:silver;">
+               <th style="text-align:right;"> HTML&nbsp;Browser </th>
+               <th/>
+               <th style="text-align:left;"> Information </th>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Browser code name: </td>
+               <td/>
+               <td id="browserCodeName"/>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Browser application name: </td>
+               <td/>
+               <td id="browserAppName"/>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Browser version: </td>
+               <td/>
+               <td id="browserAppVersion"/>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Cookies enabled: </td>
+               <td/>
+               <td id="browserCookieEnabled"/>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> Platform: </td>
+               <td/>
+               <td id="browserPlatform"/>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> User Agent: </td>
+               <td/>
+               <td id="browserUserAgent"/>
+            </tr>
+            <tr>
+               <td style="text-align:right;"> System language: </td>
+               <td/>
+               <td id="browserSystemLanguage"/>
+            </tr>
+            <tr>
+               <td colspan="3">
+                  <div id="htmlPageFooter">
+                     <table border="1"
+                            style="float:left; margin:auto; margin-top:20px; border:1px solid black;">
+                        <caption style="text-align:center;background-color:silver;border-color:silver; padding:4px;">
+                           <b>X3DOM node coverage</b>
+                        </caption>
+                        <tr style="text-align:center; padding:4px; border:1px solid black;">
+                           <th> Supported nodes found </th>
+                           <th> Unsupported nodes found </th>
+                           <th> Partial support</th>
+                        </tr>
+                        <tr style="border:1px solid black;">
+                           <td style="text-align:left;vertical-align:text-top;padding:4px;">
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Appearance"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Appearance</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Background"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Background</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Box"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Box</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Coordinate"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Coordinate</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Extrusion"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Extrusion</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Group"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Group</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#head"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">head</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#ImageTexture"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">ImageTexture</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#IndexedFaceSet"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">IndexedFaceSet</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Material"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Material</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#meta"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">meta</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#NavigationInfo"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">NavigationInfo</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Scene"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Scene</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Shape"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Shape</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Sphere"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Sphere</span>
+                              </a>
+                              <br/>
+                              <a href="http://www.web3d.org/x3d/tooltips/X3dTooltips.html#Transform"
+                                 target="_blank">
+                                 <span style="color:green; text-decoration-color:green; moz-text-decoration-color:green;">Transform</span>
+                              </a>
+                              <br/> 
+                           </td>
+                           <td style="text-align:left;vertical-align:text-top;padding:4px;"> </td>
+                           <td style="text-align:left;vertical-align:text-top;padding:4px;"> </td>
+                        </tr>
+                        <tr style="text-align:center; background-color:silver;border-color:silver; padding:6px;">
+                           <td colspan="3" style="cellpadding:3px"> &nbsp;&nbsp;&nbsp; References: <a href="http://www.x3dom.org/check" onclick="target='_blank';">X3DOM browser check</a>,
+                                <a href="http://www.x3dom.org" onclick="target='_blank';">X3DOM home</a>,
+                                <a href="http://doc.x3dom.org" onclick="target='_blank';">X3DOM documentation</a>,
+                                <a href="http://x3dom.org/x3dom/test/functional/dumpNodeTypeTree.html"
+                                 onclick="target='_blank';">X3DOM list of supported nodes</a>,
+                                and
+                                <a href="http://www.web3d.org/x3d/content/examples/X3dResources.html"
+                                 onclick="target='_blank';">X3D Resources</a> &nbsp;&nbsp;&nbsp; </td>
+                        </tr>
+                     </table>
+                  </div>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>
