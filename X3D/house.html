@@ -15,7 +15,7 @@
 	
 	<body>
 	
-	<p>UI version number: 2018.05.30.3</p>
+	<p>UI version number: 2018.05.30.5</p>
 	
 	<x3d width='800px' height='600px'> 
         <scene> 
@@ -121,33 +121,99 @@
 				</shape> 
 				</Transform>
 			</Transform>
-			<!--USA
-			<Transform DEF='transform_door' center='25 0 0'>
-			    <Transform translation='40 22.5 0'>
-				<Shape>
-				  <Appearance>
-					<ImageTexture url='"Door.jpg" "http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Door.jpg"'/>
-				  </Appearance>
-				  <Box size='30 44.5 2'/>
-				</Shape>
-				<TouchSensor DEF='touch_door' description='touch door to open/close'/>
-			  </Transform>
-				<Transform DEF = "Perete_lateral_baie">
-					<Transform translation = "-2.15 0.5 4.3">
-					<shape>
-						<appearance>
-							<imagetexture url = "brick.jpg"/>
-						</appearance>
-						<Box size='10, 15, 0.3' solid='true'>
-						</Box>
-					</shape> 
-					</Transform>
-				</Transform>-->
+			<Transform DEF = "Perete_camera_mea">
+				<Transform translation = "3 0.5 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_camera_mea">
+				<Transform translation = "3 0.5 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_lemn.jpg"/>
+					</appearance>
+					<Box size='0.3, 12, 6' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_hol_interior">
+				<Transform translation = "-7 0.5 15.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='20, 15, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_living">
+				<Transform translation = "-5 0.5 15.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_lemn.jpg"/>
+					</appearance>
+					<Box size='6, 12, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_living">
+				<Transform translation = "-17 0.5 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_intre_hol_si_camara">
+				<Transform translation = "-22 0.5 15.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='10, 15, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_intre_hol_si_baie">
+				<Transform translation = "-17 0.5 20.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_baie">
+				<Transform translation = "-17 0.5 20.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_baie.jpg"/>
+					</appearance>
+					<Box size='0.3, 12, 6' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
 			<!--podea -->
 			<Transform DEF = "Podea">
 				<Transform translation = "-7 -7 15.8">
 				<shape>
-					<Extrusion crossSection='[(20,20), (20, -20), (-20, -20), (-20, 20), (20, 20)]'  height='0.1' solid='false'>
+					<Extrusion crossSection='[(20,20), (20, -20), (-20, -20), (-20, 20), (20, 20)]'  height='0.3' solid='false'>
 					</Extrusion>
 					<appearance>
 						<Material transparency ='0' diffuseColor=".9 .9 .9"/>
