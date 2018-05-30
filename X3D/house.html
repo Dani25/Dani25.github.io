@@ -2,7 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <html> 
         <head> 
-            <title>Casa mea X3DOM</title> 			
+            <title>Daniela`s house</title> 			
             <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script> 
             <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
 			<script type="text/javascript" src="https://x3dom.org/release/x3dom-full.js"></script>
@@ -23,24 +23,80 @@
 			</viewpoint>
 			
 			<!--Pereti-->
-			<Transform DEF = "Perete_spate">
+			<Transform DEF = "Perete_lateral_spate">
 				<Transform translation = "-2.15 0.5 -4.3">
 				<shape>
 					<appearance>
 						<imagetexture url = "brick.jpg"/>
 					</appearance>
-					<Box size='40, 15, 0.3' solid='true'>
+					<Box size='50, 15, 0.3' solid='true'>
+					</Box>
+				</shape> 
+			</Transform>
+			<Transform DEF = "Perete_spate">
+				<Transform translation = "-27 0.5 10.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 30' solid='true'>
+					</Box>
+				</shape> 
+			</Transform>
+			<Transform DEF = "Perete_fata_0">
+				<Transform translation = "23 0.5 10.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 30' solid='true'><!--modificare pentru a avea 1 geam-->
 					</Box>
 				</shape> 
 				</Transform>
+			</Transform>
+			<Transform DEF = "geam">
+				<Transform translation = "23 0.5 10.5">
+				<shape>
+					<appearance>
+						 <imagetexture url = "geam.png"/>
+					</appearance>
+					<Box size='0.3, 5, 6' solid='true'><!--modificare pentru a avea 1 geam-->
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+	    
+					
+			<!--USA
+			<Transform DEF='transform_door' center='25 0 0'>
+			    <Transform translation='40 22.5 0'>
+				<Shape>
+				  <Appearance>
+					<ImageTexture url='"Door.jpg" "http://www.web3d.org/x3d/content/examples/Basic/StudentProjects/Door.jpg"'/>
+				  </Appearance>
+				  <Box size='30 44.5 2'/>
+				</Shape>
+				<TouchSensor DEF='touch_door' description='touch door to open/close'/>
+			  </Transform>
+				<Transform DEF = "Perete_lateral_baie">
+					<Transform translation = "-2.15 0.5 4.3">
+					<shape>
+						<appearance>
+							<imagetexture url = "brick.jpg"/>
+						</appearance>
+						<Box size='10, 15, 0.3' solid='true'>
+						</Box>
+					</shape> 
+					</Transform>
+				</Transform>-->
 			<!--podea -->
 			<Transform DEF = "Podea">
-				<Transform translation = "0 -0.1 0">
+				<Transform translation = "-7 -7 15.8">
 				<shape>
-					<Extrusion crossSection='[(-10,-10),(40,-40)]'  height='0.1' solid='false'>
+					<Extrusion crossSection='[(20,20), (20, -20), (-20, -20), (-20, 20), (20, 20)]'  height='0.1' solid='false'>
 					</Extrusion>
 					<appearance>
-						<Material transparency ='0' diffuseColor="0 1 1"/>
+						<Material transparency ='0' diffuseColor=".9 .9 .9"/>
 					</appearance>
 				</shape> 
 				</Transform>
