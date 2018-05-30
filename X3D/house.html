@@ -241,11 +241,47 @@
 					</Extrusion>
 					<appearance>
 						<!--imagetexture url = "parchet.jpg"/-->
-						<Material diffuseColor ="1 1 1">
+						<Material diffuseColor = "1 1 1">
 					</appearance>
 				</shape>
 				</Transform>
 			</Transform>
+			<!--Acoperis-->
+			<Transform DEF = "Acoperis lateral">
+				<Transform rotation = "-1 0 0 0.65" translation = "-7 14 2.5">
+				<shape>
+					<Extrusion crossSection='[(20,10), (43, -20), (-20, -20), (-20, 10), (20, 10)]'  height='0.01' solid='true'>
+					</Extrusion>
+					<appearance>
+						<imagetexture url = "tigla.jpg">
+					</appearance>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Acoperis lateral 2">
+				<Transform rotation = "1 0 0 0.65" translation = "-7 8.9 25">
+				<shape>
+					<Extrusion crossSection='[(43,10), (20, -20), (-20, -20), (-20, 10), (20, 10)]'  height='0.01' solid='true'>
+					</Extrusion>
+					<appearance>
+						<imagetexture url = "tigla.jpg">
+					</appearance>
+				</shape> 
+				</Transform>
+			</Transform>
+	
+			<Transform DEF = "Acoperis triunghi fata">
+				<Transform rotation = "0 0 -1 0.65" translation = "18.8 16 35">
+				<shape>
+					<Extrusion crossSection='[(25,3),(25,-53),(-7,-25)]'  height='0.01' solid='true'>
+					</Extrusion>
+					<appearance>
+						<imagetexture url = "tigla.jpg">
+					</appearance>
+				</shape> 
+				</Transform>
+			</Transform>
+			
 			<!--Background colors: sky and ground-->
 			<background groundAngle='0.1 1.309 1.5708' groundColor='0 .5 0 0 0.5 0.8 .4 0.7 0.5 0 0.8 0.5' skyAngle='0.1 0.15 1.309 1.571' skyColor='0.4 0.4 0.1 0.4 0.4 0.1 0 0.1 0.3 0 0.2 0.6 0.8 0.8 0.8'/>
 			
