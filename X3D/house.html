@@ -224,7 +224,7 @@
 			<Transform DEF = "Podea">
 				<Transform translation = "-7 -7 15.8">
 				<shape>
-					<Extrusion crossSection='[(30,10), (30, -20), (-20, -20), (-20, 10), (30, 10)]'  height='0.3' solid='false'>
+					<Extrusion crossSection='[(30,10), (30, -20), (-20, -20), (-20, 10), (30, 10)]'  height='0.6' solid='false'>
 					</Extrusion>
 					<appearance>
 						<imagetexture url = "parchet.jpg"/>
@@ -233,7 +233,19 @@
 				</shape> 
 				</Transform>
 			</Transform>
-			
+			<!-- Tavan-->
+			<Transform DEF = "Tavan">
+				<Transform translation = "-7 8 15.8">
+				<shape>
+					<Extrusion crossSection='[(30,10), (30, -20), (-20, -20), (-20, 10), (30, 10)]'  height='0.3' solid='false'>
+					</Extrusion>
+					<appearance>
+						<!--imagetexture url = "parchet.jpg"/-->
+						<Material diffuseColor ="1 1 1">
+					</appearance>
+				</shape>
+				</Transform>
+			</Transform>
 			<!--Background colors: sky and ground-->
 			<background groundAngle='0.1 1.309 1.5708' groundColor='0 .5 0 0 0.5 0.8 .4 0.7 0.5 0 0.8 0.5' skyAngle='0.1 0.15 1.309 1.571' skyColor='0.4 0.4 0.1 0.4 0.4 0.1 0 0.1 0.3 0 0.2 0.6 0.8 0.8 0.8'/>
 			
