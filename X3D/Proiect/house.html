@@ -15,12 +15,10 @@
 	
 	<body>
 	
-	<p>UI version number: 2018.05.31.0</p>
+	<p>UI version number: 2018.05.31.1</p>
 	
 	<x3d width='1200px' height='800px'> 
         <scene> 
-			
-			<!--Pereti, zugraveli, usi, geamuri-->
 			<!--Pereti-->
 			<Transform DEF = "Perete_lateral_spate">
 				<Transform translation = "-2.15 0.5 -4.3">
@@ -33,68 +31,17 @@
 				</shape> 
 				</Transform>
 			</Transform>
-			
-			<!--zugravire camera mea>-->
-			<Transform DEF = "Perete_lateral_camera mea_zugravit">
-				<Transform translation = "13 0.5 -4.1">
+			<Transform DEF = "Perete_camera mea catre curte">
+				<Transform translation = "13 0.5 15.5">
 				<shape>
 					<appearance>
-						<Material diffuseColor = ".7 .6 .9"/>
+						<imagetexture url = "brick.jpg"/>
 					</appearance>
-					<Box size='20, 15, 0.1' solid='true'>
+					<Box size='20, 15, 0.3' solid='true'>
 					</Box>
 				</shape> 
 				</Transform>
 			</Transform>
-			<Transform DEF = "Perete_fata_camera mea_zugravit">
-				<Transform translation = "22.8 0.5 5.3">
-				<shape>
-					<appearance>
-						<Material diffuseColor = ".7 .6 .9"/>
-					</appearance>
-					<Box size='0.1, 15, 20' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "Perete_camera mea catre curte_zugravit">
-				<Transform translation = "13 0.5 15">
-				<shape>
-					<appearance>
-						<Material diffuseColor = ".7 .6 .9"/>
-					</appearance>
-					<Box size='20, 15, 0.1' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "Perete_camera_mea_zugravit">
-				<Transform translation = "3.2 0.5 5.5">
-				<shape>
-					<appearance>
-						<Material diffuseColor = ".7 .6 .9"/>
-					</appearance>
-					<Box size='0.1, 15, 20' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<!--final zugravire camera mea-->
-			
-			<!--zugravire living-->
-			<Transform DEF = "Perete_lateral_living_zugravit">
-				<Transform translation = "13 0.5 -4.1">
-				<shape>
-					<appearance>
-						<Material diffuseColor = ".7 .6 .9"/>
-					</appearance>
-					<Box size='20, 15, 0.1' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<!--end zugravire living-->
-			
 			<Transform DEF = "Perete_spate">
 				<Transform translation = "-27 0.5 10.5">
 				<shape>
@@ -106,29 +53,6 @@
 				</shape> 
 				</Transform>
 			</Transform>
-			<Transform DEF = "Perete_spate_zugravit">
-				<Transform translation = "-26.4 0.5 10.3">
-				<shape>
-					<appearance>
-						<Material diffuseColor = "1 0 0"/>
-					</appearance>
-					<Box size='0.1, 15, 30' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "Usa_camara">
-				<Transform translation = "-27 0.5 5.5">
-				<shape>
-					<appearance>
-						<imagetexture url = "usa_baie.png">
-					</appearance>
-					<Box size='0.3, 12, 6' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			
 			<Transform DEF = "Perete_fata">
 				<Transform translation = "23 0.5 5.5">
 				<shape>
@@ -136,29 +60,6 @@
 						<imagetexture url = "brick.jpg"/>
 					</appearance>
 					<Box size='0.3, 15, 20' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-
-			<Transform DEF = "geam_camera_mea">
-				<Transform translation = "23 0.5 7.5">
-				<shape>
-					<appearance>
-						 <imagetexture url = "geam.png"/>
-					</appearance>
-					<Box size='0.3, 4, 7' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "geam_camera_mea2">
-				<Transform translation = "13 0.5 15">
-				<shape>
-					<appearance>
-						 <imagetexture url = "geam.png"/>
-					</appearance>
-					<Box size='7, 4, 0.3' solid='true'>
 					</Box>
 				</shape> 
 				</Transform>
@@ -174,56 +75,11 @@
 				</shape> 
 				</Transform>
 			</Transform>
-			<Transform DEF = "Perete_lateral_curte_zugravit">
-				<Transform translation = "-12 0.5 25.3">
-				<shape>
-					<appearance>
-						<Material diffuseColor = "1 0 0"/>
-					</appearance>
-					<Box size='30, 15, 0.1' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "geam_hol">
-				<Transform translation = "-12 0.5 25.5">
-				<shape>
-					<appearance>
-						<imagetexture url = "geam.png"/>
-					</appearance>
-					<Box size='10, 7, 0.3' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-
 			<Transform DEF = "Perete_mic_fata">
 				<Transform translation = "3 0.5 20.5">
 				<shape>
 					<appearance>
 						<imagetexture url = "brick.jpg"/>
-					</appearance>
-					<Box size='0.3, 15, 10' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "Perete_mic_fata_zugravit">
-				<Transform translation = "3 0.5 20.5">
-				<shape>
-					<appearance>
-						<Material diffuseColor = "1 0 0"/>
-					</appearance>
-					<Box size='0.1, 15, 10' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "Usa_hol">
-				<Transform translation = "3 0.5 20.5">
-				<shape>
-					<appearance>
-						<imagetexture url = "usa.jpg"/>
 					</appearance>
 					<Box size='0.3, 15, 10' solid='true'>
 					</Box>
@@ -241,18 +97,6 @@
 				</shape> 
 				</Transform>
 			</Transform>
-			
-			<Transform DEF = "Usa_camera_mea">
-				<Transform translation = "3 0.5 5.5">
-				<shape>
-					<appearance>
-						<imagetexture url = "usa_lemn.png"/>
-					</appearance>
-					<Box size='0.3, 12, 6' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
 			<Transform DEF = "Perete_hol_interior">
 				<Transform translation = "-7 0.5 15.5">
 				<shape>
@@ -263,28 +107,6 @@
 					</Box>
 				</shape> 
 				</Transform>
-			<Transform DEF = "Perete_hol_interior_zugravit">
-				<Transform translation = "-7 0.5 15.3">
-				<shape>
-					<appearance>
-						<Material diffuseColor = "1 0 0"/>
-					</appearance>
-					<Box size='20, 15, 0.1' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "Usa_living">
-				<Transform translation = "-5 0.5 15.5">
-				<shape>
-					<appearance>
-						<imagetexture url = "usa_lemn.png"/>
-					</appearance>
-					<Box size='6, 12, 0.3' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
 			<Transform DEF = "Perete_living">
 				<Transform translation = "-17 0.5 5.5">
 				<shape>
@@ -295,18 +117,6 @@
 					</Box>
 				</shape> 
 				</Transform>
-				
-			<Transform DEF = "Perete_living_zugravit">
-				<Transform translation = "-17 0.5 5.3">
-				<shape>
-					<appearance>
-						<Material diffuseColor = "1 0 0"/>
-					</appearance>
-					<Box size='0.1, 15, 20' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
 			<Transform DEF = "Perete_intre_hol_si_camara">
 				<Transform translation = "-22 0.5 15.5">
 				<shape>
@@ -314,17 +124,6 @@
 						<imagetexture url = "brick.jpg"/>
 					</appearance>
 					<Box size='10, 15, 0.3' solid='true'>
-					</Box>
-				</shape> 
-				</Transform>
-			</Transform>
-			<Transform DEF = "Perete_intre_hol_si_camara_zugravit">
-				<Transform translation = "-22 0.5 15.3">
-				<shape>
-					<appearance>
-						<Material diffuseColor = "1 0 0">
-					</appearance>
-					<Box size='10, 15, 0.1' solid='true'>
 					</Box>
 				</shape> 
 				</Transform>
@@ -340,28 +139,357 @@
 				</shape> 
 				</Transform>
 			</Transform>
-			<Transform DEF = "Perete_intre_hol_si_baie_zugravit">
-				<Transform translation = "-17 0.5 20.3">
+		
+			<!--Usi si geamuri-->
+				<Transform DEF = "Usa_baie">
+				<Transform translation = "-16.9 0 20.5">
 				<shape>
 					<appearance>
-						<Material diffuseColor = "1 0 0"/>
+						<imagetexture url = "usa_baie.png"/>
 					</appearance>
-					<Box size='0.1, 15, 10' solid='true'>
+					<Box size='0.9, 12, 6' solid='true'>
 					</Box>
 				</shape> 
 				</Transform>
 			</Transform>
-			<Transform DEF = "Usa_baie">
-				<Transform translation = "-17.2 0.5 20.5">
+			<Transform DEF = "geam baie">
+				<Transform translation = "-27 4.5 18.5">
 				<shape>
 					<appearance>
-						<imagetexture url = "usa_baie.png"/>
+						<imagetexture url = "geam_baie.jpg"/>
+					</appearance>
+					<Box size='0.7, 2, 2' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_living">
+				<Transform translation = "-3 0 15.4">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_lemn.png"/>
+					</appearance>
+					<Box size='6, 12, 0.8' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "geam_living">
+				<Transform translation = "-12 2.5 15.4">
+				<shape>
+					<appearance>
+						<imagetexture url = "geam_living.jpg"/>
+					</appearance>
+					<Box size='5, 6, 0.8' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_camera_mea">
+				<Transform translation = "3 0 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_lemn.png"/>
+					</appearance>
+					<Box size='0.9, 12, 6' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_hol">
+				<Transform translation = "3 0 20.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa.jpg"/>
+					</appearance>
+					<Box size='0.7, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "geam_hol">
+				<Transform translation = "-7 2.5 25.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "geam.png"/>
+					</appearance>
+					<Box size='10, 7, 0.7' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "geam_camera_mea">
+				<Transform translation = "23 2.5 5.5">
+				<shape>
+					<appearance>
+						 <imagetexture url = "geam.png"/>
+					</appearance>
+					<Box size='0.7, 5, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+
+			<Transform DEF = "geam_camera_mea2">
+				<Transform translation = "13 2.5 15.3">
+				<shape>
+					<appearance>
+						 <imagetexture url = "geam.png"/>
+					</appearance>
+					<Box size='7, 4, 0.7' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			
+			<Transform DEF = "Usa_camara">
+				<Transform translation = "-27 0 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_baie.png">
 					</appearance>
 					<Box size='0.3, 12, 6' solid='true'>
 					</Box>
 				</shape> 
 				</Transform>
 			</Transform>
+			
+			
+			<!--zugravire camera mea>-->
+			<Transform DEF = "Perete_lateral_camera mea_zugravit">
+				<Transform translation = "13 0.5 -4.1">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".7 .6 .9"/>
+					</appearance>
+					<Box size='20, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_fata_camera mea_zugravit">
+				<Transform translation = "22.8 0.5 5.5">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".7 .6 .9"/>
+					</appearance>
+					<Box size='0.1, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_camera mea catre curte_zugravit">
+				<Transform translation = "13 0.5 15.2">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".7 .6 .9"/>
+					</appearance>
+					<Box size='20, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_camera_mea_zugravit">
+				<Transform translation = "3.2 0.5 5">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".7 .6 .9"/>
+					</appearance>
+					<Box size='0.1, 15, 19.7' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<!--final zugravire camera mea-->
+			
+			<!--zugravire living-->
+			<Transform DEF = "Perete_lateral_living_zugravit">
+				<Transform translation = "-7 0.5 -4.1">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".9 .6 .7"/>
+					</appearance>
+					<Box size='20, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_intre living si camera_mea_zugravit">
+				<Transform translation = "2.8 0.5 5">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".9 .6 .7"/>
+					</appearance>
+					<Box size='0.1, 15, 19.7' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_living catre curte_zugravit">
+				<Transform translation = "-7 0.5 15.2">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".9 .6 .7"/>
+					</appearance>
+					<Box size='20, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_living catre camara_zugravit">
+				<Transform translation = "-16.6 0.5 5.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".9 .6 .7"/>
+					</appearance>
+					<Box size='0.1, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<!--end zugravire living-->
+			
+			<!--zugravire camara-->
+			<Transform DEF = "Perete_camara perete catre living">
+				<Transform translation = "-17.2 0.5 5.5">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".9 .9 .9"/>
+					</appearance>
+					<Box size='0.1, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_camara perete catre living">
+				<Transform translation = "-26.8 0.5 5.5">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".9 .9 .9"/>
+					</appearance>
+					<Box size='0.1, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_lateral_camara_zugravit">
+				<Transform translation = "-22 0.5 -4.1">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".9 .9 .9"/>
+					</appearance>
+					<Box size='10, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_camara catre curte_zugravit">
+				<Transform translation = "-22 0.5 15.2">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".9 .9 .9"/>
+					</appearance>
+					<Box size='10, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<!--final zugravire camara-->
+			
+			<!--zugravire baie-->
+			<Transform DEF = "Perete_lateral_baie_zugravit">
+				<Transform translation = "-22 0.5 15.7">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".7 .9 1"/>
+					</appearance>
+					<Box size='10, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_baie catre curte_zugravit">
+				<Transform translation = "-22 0.5 25.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".7 .9 1"/>
+					</appearance>
+					<Box size='10, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_baie catre hol_zugravit">
+				<Transform translation = "-17.2 0.5 20.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".7 .9 1"/>
+					</appearance>
+					<Box size='0.1, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_baie catre hol">
+				<Transform translation = "-26.8 0.5 20.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = ".7 .9 1"/>
+					</appearance>
+					<Box size='0.1, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<!--final zugravire  baie -->	
+			
+			<!--zugravire hol-->
+			<Transform DEF = "Perete_lateral_curte_zugravit">
+				<Transform translation = "-7 0.5 25.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 .8 .6"/>
+					</appearance>
+					<Box size='20, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_hol catre baie_zugravit">
+				<Transform translation = "-16.6 0.5 20.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 .8 .6"/>
+					</appearance>
+					<Box size='0.1, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_mic_fata_zugravit">
+				<Transform translation = "2.8 0.5 20.5">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 .8 .6"/>
+					</appearance>
+					<Box size='0.1, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_hol_interior_zugravit">
+				<Transform translation = "-7 0.5 15.7">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 .8 .6"/>
+					</appearance>
+					<Box size='20, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<!--final zugravire hol-->
+			
 			
 			<!--podea -->
 			<Transform DEF = "Podea">
