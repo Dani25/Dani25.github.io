@@ -1,0 +1,1467 @@
+
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" href="https://www.linodovanos.lt/css/style.css"/>
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="https://www.linodovanos.lt/js/plugins/jReject-master/js/jquery.reject.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.linodovanos.lt/js/plugins/jReject-master/css/jquery.reject.css"/>
+    <script type="text/javascript">
+		
+        $(document).ready(function () {
+
+            $.reject({
+                reject: {msie: 10},
+                closeCookie: true,
+                imagePath: 'js/plugins/jReject-master/images/',
+                header: 'Your browser is not supported here', // Header Text
+                paragraph1: 'You are currently using an unsupported browser', // Paragraph 1
+                paragraph2: 'Please install one of the many optional browsers below to proceed',
+                closeMessage: 'Close this window at your own demise!' // Message below close window link
+            });
+
+        });
+		
+    </script>
+
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/css/swiper.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.2.7/js/swiper.min.js"></script>
+
+    <script src="https://www.linodovanos.lt/js/plugins/fancyapps/source/jquery.fancybox.pack.js"></script>
+    <link rel="stylesheet" href="https://www.linodovanos.lt/js/plugins/fancyapps/source/jquery.fancybox.css">
+
+    <script src="https://www.linodovanos.lt/js/tx.preloader.js"></script>
+    <title> Red linen fabric, 185 g/m² - aukštos kokybės gryno lino gaminiai ir drabužiai</title>
+
+
+	<base href="https://www.linodovanos.lt/" />
+
+
+
+
+
+    <script type="text/javascript">
+       
+        var product_added = 'Item successfully added  into cart';
+        var out_of_stock = 'Stock is not enough</br>Contact us for greater quantity <a href="mailto:linodovanos@linas.lt">linodovanos@linas.lt</a>';
+        var current_kalba = 'en';
+        var curent_cart_page = 47;
+        var min_stock = 'Minimum order quantity 2 mtrs';
+    </script>
+
+</head>
+
+<body class="inner">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-106151747-1', 'auto');
+  ga('send', 'pageview');
+ 
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1589757104442533');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1589757104442533&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+
+<div id="page">
+    <div id="header">
+        <div class="container">
+            <a href="https://www.linodovanos.lt/en" class="logo"></a>
+            <div class="mob-langs-switcher">
+                                
+	<select>
+					<option value="https://www.linodovanos.lt/" >
+				lt
+			</option>
+					<option value="https://www.linodovanos.lt/en"  selected>
+				en
+			</option>
+					<option value="https://www.linodovanos.lt/fr" >
+				fr
+			</option>
+			</select>
+
+
+                            </div>
+            <div class="search_container">
+				<form id="cntnt01moduleform_1" method="get" action="https://www.linodovanos.lt/search" class="cms_form">
+<div class="hidden">
+<input type="hidden" name="mact" value="Search,cntnt01,dosearch,0" />
+<input type="hidden" name="cntnt01returnid" value="34" />
+</div>
+
+<div class="search_block">
+		<input type="text" id="cntnt01searchinput" name="cntnt01searchinput" value="" placeholder="Search entire store here" />
+	<input type="submit" value="" />
+</div>
+</form>
+
+            </div>
+            <div class="cart_container cart_place">
+                
+
+
+
+
+
+
+<a href="https://www.linodovanos.lt/cart">
+	<i class="fa fa-shopping-cart"></i>
+	<span>Qty: 0</span>
+	<span>€0.00</span>
+</a>
+
+<div id="addToCartPopupContentHidden" style="display: none">
+	<div id="addToCartPopupContent">
+
+		
+		<table class="addToCartPorductsListGrid" cellspacing="0" cellpadding="0" border="0" width="100%">
+					</table>
+	</div>
+	<div class="addToCartPopupFooter">
+		<a class="ext_button greyHardStyle f_16" href="javascript:$.fancybox.close();">
+			<span>Back to e-shop</span>
+		</a>
+		<a class="ext_button greyHardStyle f_16" href="https://www.linodovanos.lt/cart">
+			<span>View Cart</span>
+		</a>
+	</div>
+</div>
+
+
+            </div>
+            <div class="header_contant">
+                <div class="main_menu_container">
+					
+
+
+
+<div class="main_menu">
+																			
+			
+			<div class="">
+				<a href="/Products/kitchen/aprons">Kitchen linen</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/kitchen/aprons">
+					<span class="title">
+						<span>Aprons</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595098871387_image-e9867f28f655a36d3efea96116066b18.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/kitchen/mittens">
+					<span class="title">
+						<span>Mittens</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640001657482_image-b461f549513e110d4297039d7e8ce03c.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/kitchen/towels">
+					<span class="title">
+						<span>Towels</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640014244308_image-053a7178d17aed2cf65b50f5760147d1.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/kitchen/pot-holders">
+					<span class="title">
+						<span>Pot holders</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640013398299_image-7304668f552f846145d26af0fc0ce206.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/kitchen/the-little-chef">
+					<span class="title">
+						<span>The little chef</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14639967757456_image-16e2f8e25c3aecfd582b15d218aceca5.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/kitchen/other-items">
+					<span class="title">
+						<span>Other items</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14639967391054_image-abe09feb9dde0459f3c02082cf65b018.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="/Products/dining/napkins">Dining linen</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/dining/napkins">
+					<span class="title">
+						<span>Napkins</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14628734511283_image-21ef67b2c7f6299c493b1204875f6df3.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/dining/tablecloths">
+					<span class="title">
+						<span>Tablecloths</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595117704364_image-ab6995bcc89e7bd8eb77c5e525af4d01.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/dining/runners">
+					<span class="title">
+						<span>Runners</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595116294550_image-034605fb17f73bd62fab7f1917367616.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/dining/placemats">
+					<span class="title">
+						<span>Placemats</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595118507826_image-84353a4b2d7f09f1fe26e5d0782adefe.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/dining/table-linen-sets">
+					<span class="title">
+						<span>Table linen sets</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595067928181_image-287fb8487ebeaad15d1a6742257916bb.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="/Products/bed/bed-sets">Bed linen</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/bed/bed-sets">
+					<span class="title">
+						<span>Bed sets</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14594160019642_image-c38c24ab354f7a231739e31c89ab49ce.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/bed/duvet-covers">
+					<span class="title">
+						<span>Duvet covers</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14639977018037_image-5a58b6ac633ad9c390d8e5eed0ca11f7.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/bed/pillow-cases">
+					<span class="title">
+						<span>Pillow cases</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595074724045_image-6a1615d5b6ae4449c79fc7a70371bce8.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/bed/sheets">
+					<span class="title">
+						<span>Sheets</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640017884845_image-745f70184c05cf646ecc5ecfc836a538.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/bed/bed-sets-for-kids">
+					<span class="title">
+						<span>Bed sets for kids</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640005771685_image-d17e1e7f0eb3008dbb75e0aee99afbaa.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="/Products/living/throws-and-blankets">Living linen</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/living/throws-and-blankets">
+					<span class="title">
+						<span>Throws and blankets</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640018622603_image-9029d91d4b7b0ac064291183f70c5c67.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/living/decorative-pillows">
+					<span class="title">
+						<span>Decorative pillows</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595082596619_image-63256a95aba1476abf5db3c99b1c6d96.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/living/other-items">
+					<span class="title">
+						<span>Other items</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595071887526_image-f2fed00d1ec55e2e6fd17f09f4cdba4d.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="/Products/bathroom-linens/bath-towels">Bathroom linen</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/bathroom-linens/bathrobes">
+					<span class="title">
+						<span>Bathrobes</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14661478761572_image-56a08d931c044369a5671f310a880dba.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/bathroom-linens/bath-towels">
+					<span class="title">
+						<span>Bath towels</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640025054241_image-c00f875e8584f4c024fd79b8aad0cd67.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/bathroom-linens/other-items">
+					<span class="title">
+						<span>Other items</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640022004651_image-d52e6d3a71204b290b5d1e02ce7d3d3b.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="/Products/accessories/scarves-and-shawls">Accessories</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/accessories/handbags-and-bags">
+					<span class="title">
+						<span>Handbags and bags</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640030841039_image-5b577ae02c5dc0568829cba4f4033106.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/accessories/scarves-and-shawls">
+					<span class="title">
+						<span>Scarves and shawls</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640044782975_image-a692868c53f41e0a807a029b0272017c.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/accessories/other-items">
+					<span class="title">
+						<span>Other items</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595069322363_image-4b8372c321db37a5a086b8379b3a8784.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="/Products/linen-clothes/dresses">Linen clothes</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-clothes/dresses">
+					<span class="title">
+						<span>Dresses</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640045347337_image-160136501de0a9e32e5e27ee219e2a7b.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-clothes/blouses-and-jackets">
+					<span class="title">
+						<span>Blouses and jackets</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640045595947_image-26d99a28a3834d68acca083857ffb134.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-clothes/trousers-and-skirts">
+					<span class="title">
+						<span>Trousers and skirts</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640045796030_image-0d1a61100c2deb3b5e8d30f7f755cd37.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-clothes/clothing-for-men">
+					<span class="title">
+						<span>Clothing for men</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640048386601_image-aad9160d331fec790cd2e7d813b4f015.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-clothes/clothing-for-kids">
+					<span class="title">
+						<span>Clothing for kids</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640046343480_image-7236696ec013a06e076340e2152427ad.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="selected ">
+				<a href="/Products/linen-fabrics/pure-linen-fabrics">Fabrics</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-fabrics/pure-linen-fabrics">
+					<span class="title">
+						<span>Pure linen fabrics</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595091082631_image-1e57eae698310af69c6b347623f536df.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-fabrics/linen-blend-fabrics">
+					<span class="title">
+						<span>Linen blend fabrics</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14595092219666_image-48c270d28fcfbc69e4d0a80c208408f7.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-fabrics/stock-sale">
+					<span class="title">
+						<span>Stock sale</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14640050676639_image-8fc7b6d40e54086639ee0ba462eab4a5.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linen-fabrics/basic-fabrics">
+					<span class="title">
+						<span>Basic fabrics</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/14870096846135_image-b5c65c9aca46116ddc78ed988cd63ba7.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="Products/Linen-yarns">Linen yarns</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="/Products/linas-brand/collection-sense">Linas brand</a>
+				
+<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-sense">
+					<span class="title">
+						<span>Collection SENSE</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078049936326_image-2ba5e80f23f91a0dcc609ded964dc2e1.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-breeze">
+					<span class="title">
+						<span>Collection BREEZE</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078059492331_image-53c257ccd96adad2b665cbac9979432b.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-urban">
+					<span class="title">
+						<span>Collection URBAN</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078066716618_image-1aee1efe6bb983459033bbebedf67f51.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-origami">
+					<span class="title">
+						<span>Collection ORIGAMI</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078069022468_image-0bc1a3e475ec3bcd59d10b008a32b7e5.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-revival">
+					<span class="title">
+						<span>Collection REVIVAL</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078076096070_image-7096798fa98917db9307dffa68ee76a3.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-harmony">
+					<span class="title">
+						<span>Collection HARMONY</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078078828309_image-e86e4c09df0c3fb299ba7543131110bf.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-country">
+					<span class="title">
+						<span>Collection COUNTRY</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078080456287_image-82ffeb9402f05e9b5ec30b7568904b8e.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-dune">
+					<span class="title">
+						<span>Collection DUNE</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078082451588_image-bfd17f38e5a297a3134bc56fc2b1e224.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-stripe-mood">
+					<span class="title">
+						<span>Collection STRIPE MOOD</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078085573068_image-c606140536b1153d2c55349d331fc5d1.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+					<div class="col-xs-3">
+				<a href="https://www.linodovanos.lt/Products/linas-brand/collection-ambra">
+					<span class="title">
+						<span>Collection AMBRA</span>
+					</span>
+											<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/15078085995105_image-36988ef931a437b6fdb2f369f2187010.jpg" alt="">
+						</span>
+										<span class="cont"></span>
+				</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+																		
+			
+			<div class="">
+				<a href="https://www.linodovanos.lt/our-history">About us</a>
+				<div class="main_menu_drop">
+	<div class="row">
+					<div class="col-xs-3 ">
+				<a href="https://www.linodovanos.lt/our-history">
+					<span class="title">
+						<span>Our history</span>
+					</span>
+																<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/DSC04627-ce2dc7eb28506bf40a9de14b69da2b6a.JPG" alt=""/>
+						</span>
+										
+														</a>
+			</div>
+					<div class="col-xs-3 ">
+				<a href="https://www.linodovanos.lt/e-shop">
+					<span class="title">
+						<span>E-Shop</span>
+					</span>
+																<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/internetine parduotuve-45c45dccaa0557119a85835577439e1b.jpg" alt=""/>
+						</span>
+										
+														</a>
+			</div>
+					<div class="col-xs-3 ">
+				<a href="https://www.linodovanos.lt/wholesale-buying">
+					<span class="title">
+						<span>Wholesale buying</span>
+					</span>
+																<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/didmenininkams-bdf4263598d8929bcd3cb0135eff5624.jpg" alt=""/>
+						</span>
+										
+														</a>
+			</div>
+					<div class="col-xs-3 ">
+				<a href="https://www.linodovanos.lt/why-should-you-chose-linas">
+					<span class="title">
+						<span>Why should you choose &#39;Linas&#39;?</span>
+					</span>
+																<span class="photo">
+							<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/pirkti pas mus-f75972783024b2ce8e6a8c4aa2b753a3.jpg" alt=""/>
+						</span>
+										
+														</a>
+			</div>
+			</div>
+</div>
+				
+			</div>
+			</div>
+
+
+                </div>
+                <div class="top_elements">
+                    <ul class="top_contacts">
+                        <li>
+                            <a href="tel:+370 658 00102" class="ph1">
+                               +370 658 00102
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:linodovanos@linas.lt" class="ph2">
+                               linodovanos@linas.lt
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cartz_and_lang">
+                    <div>
+                        <a href="https://www.linodovanos.lt/cart" class="my_profile">MY CART</a>
+                    </div>
+
+                    <div class="langs_selector">
+						<a href="#">
+							en
+							<i class="fa fa-angle-down"></i>
+						</a>
+						    
+	<ul class="langs">
+					<li class="">
+				<a href="https://www.linodovanos.lt/">lt</a>
+			</li>
+					<li class=" selected">
+				<a href="https://www.linodovanos.lt/en">en</a>
+			</li>
+					<li class="">
+				<a href="https://www.linodovanos.lt/fr">fr</a>
+			</li>
+			</ul>
+
+
+
+
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+			
+
+
+
+	
+
+
+	<div class="pageTopPhoto" style="background-image: url()">
+        <div class="container">
+            <div class="pageTopPhotoContent">
+                <h1> Red linen fabric, 185 g/m²</h1>
+            </div>
+        </div>
+    </div>
+	<div class="section">
+        <div class="container">
+            <div class="path_container">
+                <div class="fr">
+                    <a href="javascript:window.history.go(-1);">Return</a>
+                </div>
+                <ul class="path">
+                    <li> <a href="https://www.linodovanos.lt/en" title="Linas gift" >Home</a></li>
+					<li><a href="https://www.linodovanos.lt/Product/Red-linen-fabric-185-g-m"> Red linen fabric, 185 g/m²</a></li><li>Linen fabrics</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3">
+                    <div class="sideMenuContainer">
+
+						
+
+                        <div class="sideMenuContainerToggler">Category: </div>
+						<ul class="sideMenu">
+			<li >
+			<a href="https://www.linodovanos.lt/Products/linen-fabrics/pure-linen-fabrics"><span>Pure linen fabrics</span></a>
+					</li>
+			<li >
+			<a href="https://www.linodovanos.lt/Products/linen-fabrics/linen-blend-fabrics"><span>Linen blend fabrics</span></a>
+					</li>
+			<li >
+			<a href="https://www.linodovanos.lt/Products/linen-fabrics/stock-sale"><span>Stock sale</span></a>
+					</li>
+			<li >
+			<a href="https://www.linodovanos.lt/Products/linen-fabrics/basic-fabrics"><span>Basic fabrics</span></a>
+					</li>
+	</ul>
+
+                    </div>
+                    <div class="morgan-freeman">
+                    <br>
+                    <h3></h3>
+
+
+
+	<form action="https://www.linodovanos.lt/Products/linen-fabrics" method="get" class="product_filter">
+		<div class="productsFilterContainer">
+			<div class="productsFilterToggler">Filter</div>
+			<span class="productsSucker">Filter</span>
+			<div class="productsFilter">
+
+																				<div>
+							<h2 class="decored_h uppercase">Composition</h2>
+							<div></div>
+							<div class="productsFilterInputs">
+								<div class="row expander_container">
+																																					
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_46_medvilne_54" >
+												Linen 46%, Cotton 54%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_59_medvilne_41" >
+												Linen 59%, Cotton 41%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_53_medvilne_47" >
+												Linen 53%, Cotton 47%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_56_medvilne_44" >
+												Linen 56%, Cotton 44%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_50_medvilne_50" >
+												Linen 50%, Cotton 50%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_58_medvilne_42" >
+												Linen 58%, Cotton 42%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_57_medvilne_43" >
+												Linen 57%, Cotton 43%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_60_medvilne_40" >
+												Linen 60%, Cotton 40%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_54_medvilne_46" >
+												Linen 54%, Cotton 46%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_51_medvilne_49" >
+												Linen 51%, Cotton 49%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="Linas 76%, Viskozė 19% Kitas pluoštas 5%" >
+												Linas 76%, Viskozė 19% Kitas Pluoštas 5%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="medvilne_100" >
+												Cotton 100%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_100" >
+												Linen 100%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="Linas 52%, Medvilnė 46%" >
+												Linas 52%, Medvilnė 46%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_45_medvilne_55" >
+												Linen 45%, Cotton 55%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_55_medvilne_45" >
+												Linen 55%, Cotton 45%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_52_medvilne_48" >
+												Linen 52%, Cotton 48%
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6asudetis[]" value="linas_48_medvilne_52" >
+												Linen 48%, Cotton 52%
+											</label>
+										</div>
+																																						<div class="expander">
+											<a href="#">Open</a>
+										</div>
+										<div class="calappser">
+											<a href="#">Close</a>
+										</div>
+																	</div>
+							</div>
+						</div>
+																									<div>
+							<h2 class="decored_h uppercase">Select colour</h2>
+							<div></div>
+							<div class="productsFilterInputs">
+								<div class="row expander_container">
+																																					
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="balta" >
+												White
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="geltona" >
+												Yellow
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="juoda" >
+												Black
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="marga" >
+												Multicoloured
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="melyna" >
+												Blue
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="naturali" >
+												Natural
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="oranzine" >
+												Orange
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="pilka" >
+												Grey
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="raudona" >
+												Red
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="rozine" >
+												Pink
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="ruda" >
+												Brown
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="violetine" >
+												Purple
+											</label>
+										</div>
+																													
+										<div class="col-xs-12 col-sm-12 ex_hid">
+											<label>
+												<input type="checkbox" name="ma4e6aspalva_fi[]" value="zalia" >
+												Green
+											</label>
+										</div>
+																																						<div class="expander">
+											<a href="#">Open</a>
+										</div>
+										<div class="calappser">
+											<a href="#">Close</a>
+										</div>
+																	</div>
+							</div>
+						</div>
+														
+			</div>
+			
+		</div>
+	</form>
+
+<br/>
+
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+					<style type="text/css">
+	.morgan-freeman{
+		display: none !important;
+	}
+	.productCardNav{
+		margin-top: 15px !important;
+	}
+</style>
+
+	<div class="productCardNav">
+					<a href="https://www.linodovanos.lt/Product/White-linen-fabric-185-g-m" class="ext_button greyHardStyle f_16">
+				<i class="fa fa-angle-left"></i>
+				<span>Previous</span>
+			</a>
+							<a href="https://www.linodovanos.lt/Product/Black-linen-fabric-185-g-m" class="ext_button greyHardStyle f_16">
+				<span>Next</span>
+				<i class="fa fa-angle-right"></i>
+			</a>
+			</div>
+
+<br>
+<div class="productCard">
+	<div class="row">
+		<div class="col-xs-12 col-sm-5">
+							<div class="productGallery">
+					<div class="swiper-container gallery-top">
+						<div class="swiper-wrapper">
+															<div class="swiper-slide">
+									<a href="/uploads/Products/product_4144/red-linen-fabric-1110002po-sp-2_1479982493.jpeg" class="fancy" rel="prod_gal">
+										<img src="https://www.linodovanos.lt/uploads/_CGSmartImage/red-linen-fabric-1110002po-sp-2_1479982493-ae379e9ecc135bd57af3678e13b029b8.jpeg" width="350" height="410" alt="red-linen-fabric-1110002po-sp-2_1479982493-ae379e9ecc135bd57af3678e13b029b8.jpeg"/>
+									</a>
+								</div>
+													</div>
+						<!-- Add Arrows -->
+						<div class="swiper-button-next swiper-button-white"></div>
+						<div class="swiper-button-prev swiper-button-white"></div>
+					</div>
+				</div>
+								<br/>
+				<div>
+					Attention! The colour of fabric can be different in comparison with colour that you see on computer or mobile phone screen. It depends on your device settings.
+				</div>
+					</div>
+		<div class="col-xs-12 col-sm-7">
+			<h1> Red linen fabric, 185 g/m²</h1>
+			
+			<br>
+			<h2 class="decored_h"><span>Information about item</span></h2>
+			<div class="productAttrsGrid">
+				
+				<table cellpadding="0" cellspacing="0" border="0">
+					
+																														
+																																																																																		
+																									
+																																
+						
+
+																<tr>
+							<td>Composition:</td>
+							<td>Linen 100%</td>
+						</tr>
+																										<tr>
+							<td>Colour:</td>
+							<td>Red</td>
+						</tr>
+																<tr>
+							<td>Width in cm.:</td>
+							<td>150</td>
+						</tr>
+																<tr>
+							<td>SKU:</td>
+							<td>1110002_0_2_0</td>
+						</tr>
+					
+					
+				</table>
+			</div>
+			<div>
+				<p>This fabric is recommended for clothing, table linen, bed linen, curtains and other various interior decorations.</p>
+			</div>
+			<br>
+			
+							
+
+
+
+
+
+
+
+
+<form id="m5cfd1moduleform_2" method="post" action="https://www.linodovanos.lt/products" class="cms_form" enctype="multipart/form-data">
+<div class="hidden">
+<input type="hidden" name="mact" value="Cart,m5cfd1,default,0" />
+<input type="hidden" name="m5cfd1returnid" value="45" />
+<input type="hidden" name="m5cfd1product" value="4144" />
+<input type="hidden" name="m5cfd1cart_returnto" value="https://www.linodovanos.lt/Product/Red-linen-fabric-185-g-m" />
+<input type="hidden" name="m5cfd1addindividual" value="" />
+</div>
+
+	<input type="hidden" name="m5cfd1kalba" value="en"/>
+	<input type="hidden" name="m5cfd1cart_submit" value="Pridėti į krep&scaron;elį"/>
+	<input type="hidden" name="m5cfd1viewcartpage" value="47"/>
+
+										<div class="prices">
+																		<strong>€8.69</strong>
+															</div>
+							
+			<div class="attribute select" style="display:none;">
+				<div>Colour| Size| Price</div>
+				<div><select class="cms_dropdown" name="m5cfd1cart_attrib_2611"><option value="4087">Colour: Red  | Price: 8.69 €</option></select>
+</div>
+			</div>
+
+
+
+			
+
+	<div class="quantz">
+		<div>Qty</div>
+		<div>
+			<input type="text" name="m5cfd1cart_quantity" class="amount audinys" value="2"/>
+		</div>
+	</div>
+	<Br>
+	<div>
+		<a class="ext_button greyHardStyle f_16 uppercase add_to_cart" href="#">
+			<i class="fa fa-shopping-cart"></i>
+			<span>Add to cart</span>
+		</a>
+	</div>
+
+</form>
+
+			
+		</div>
+	</div>
+</div>
+<br>
+<br>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+	<div class="section">
+        <div class="container">
+            <h2 class="decored_h uppercase"><span>Advantages</span></h2>
+            <div class="row narrow merits">
+                <div class="col-xs-12 col-sm-3">
+					<a href="delivery"><img src="uploads/images/Ikonos/greitas_EN.png" alt="" width="153" height="94" /></a>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <a href="delivery"><img src="uploads/images/Ikonos/pristatymas_EN.png" alt="" width="153" height="94" /></a>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <a href="payment-methods"><img src="uploads/images/Ikonos/atiskaitymas_EN.png" alt="" width="153" height="94" /></a>
+                </div>
+								<div class="col-xs-12 col-sm-3">
+										<a href="e-shop"><img src="uploads/images/Ikonos/gamintojas_EN.png" alt="" width="205" height="94" /></a>
+								</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="container">
+            <div class="newsletterBlock">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 xs-bottom-30">
+                        <ul class="socials">
+                            <li>
+                                <a href="https://www.facebook.com/Lino.dovanos/">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/AB_LINAS">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/106983800359963550577">
+                                    <i class="fa fa-google-plus-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/linasprekyba/">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+
+                        <div class="newsletterSubscriber fr">
+                            <div>
+                                <h3>Newsletter subscription</h3>
+                            </div>
+                            <div>
+                            </div>
+                            <div>
+                                <a href="https://www.linodovanos.lt/newsletter-2" class="submit">
+                                    Subsrcibe
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section footer_colls_section">
+        <div class="container">
+            <div class="row footer_colls">
+                <div class="col-xs-12 col-sm-3">
+					<h2>INFORMATION</h2>
+<ul>
+<li><a href="our-history">About us</a></li>
+<li><a href="e-shop">E-Shop</a></li>
+<li><a href="contacts-2">Company details</a></li>
+</ul>
+
+                </div>
+                <div class="col-xs-12 col-sm-3">
+					<h2>BUYING</h2>
+<ul>
+<li><a href="payment-methods">Payment methods</a></li>
+<li><a href="delivery">Delivery methods</a></li>
+<li><a href="return-policy">Return policy</a></li>
+</ul>
+
+                </div>
+                <div class="col-xs-12 col-sm-3">
+					<h2>RULES</h2>
+<ul>
+<li><a href="buying-policy">How to buy?</a></li>
+<li><a href="privacy-policy">Privacy policy</a></li>
+<li><a href="terms-conditions">Terms &amp; conditions</a></li>
+</ul>
+
+                </div>
+                <div class="col-xs-12 col-sm-3">
+					<h2>USEFUL</h2>
+<ul>
+<li><a href="linen-characterictics">Linen characterictics</a></li>
+<li><a href="linen-care">Linen care</a></li>
+<li><a href="why-should-you-chose-linas">Why should you choose 'Linas'?</a></li>
+</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer_guarantor"></div>
+</div>
+<div id="footer">
+    <div class="container">
+        <div class="footer_content">
+            <div class="fr uppercase">
+				Available Payment Methods via LUMINOR, SEB, SWEDBANK, PAYPAL
+
+                
+            </div>
+            <div>
+				© 2018 AB LINAS
+
+                <br>
+				Decision: <a href="www.texus.lt">TEXUS</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.linodovanos.lt/js/general.js" type="text/javascript"></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4d54a6586c","applicationID":"4536079","transactionName":"blBaZhEEXxVYAUwMCVcabUAKSlgIXQdASxZRRQ==","queueTime":0,"applicationTime":532,"atts":"QhdZEFkeTBs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
