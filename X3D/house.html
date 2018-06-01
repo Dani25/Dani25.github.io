@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<html> 
+        <head> 
+            <title>Daniela`s house</title> 			
+            <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script> 
+            <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
+			<script type="text/javascript" src="https://x3dom.org/release/x3dom-full.js"></script>
+			<script type="text/javascript" src="https://x3dom.org/release/components/Geometry2D.js"></script>
+        </head> 
+        <body> 
+            <h1>Daniela`s house!</h1> 
+            
+        </body>
+	
+	<body>
+	
+	<p>UI version number: 2018.05.30.16</p>
+	
+	<x3d width='1200px' height='800px'> 
+        <scene> 
+			<viewpoint description='FRONT SIDE' orientation='-1 0.02 0 0.25' position='0 3 20'></viewpoint>
+			<viewpoint  orientation='-0.12 -0.99 -0.12 1.58' position='-20 3 0'></viewpoint>
+			<viewpoint  orientation='-0 0.99 0.12 3.14' position='0 5 -20'></viewpoint>
+			<viewpoint  orientation='-0.12 0.99 0.12 1.58' position='20 3 0'></viewpoint>
+			<viewpoint position='2 1.7 10'></viewpoint>
+			<!--<viewpoint fieldofview = "1.57" position = "-2 1.7 15" orientation = "0 -1 0 0.5" id = "id_viewpoint">
+			</viewpoint>-->
+			   
+			<!--Pereti-->
+			<Transform DEF = "Perete_lateral_spate">
+				<Transform translation = "-2.15 0.5 -4.3">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='50, 15, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_lateral_zugravit">
+				<Transform translation = "-2.15 0.5 -4">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='50, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_spate">
+				<Transform translation = "-27 0.5 10.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 30' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_spate_zugravit">
+				<Transform translation = "-27 0.5 10.2">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='0.1, 15, 30' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_camara">
+				<Transform translation = "-27 0.5 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_baie.png">
+					</appearance>
+					<Box size='0.3, 12, 6' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_fata">
+				<Transform translation = "23 0.5 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_fata_zugravit">
+				<Transform translation = "23 0.5 5.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='0.1, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "geam_camera_mea">
+				<Transform translation = "23 0.5 7.5">
+				<shape>
+					<appearance>
+						 <imagetexture url = "geam.png"/>
+					</appearance>
+					<Box size='0.3, 4, 7' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_lateral_curte">
+				<Transform translation = "-12 0.5 25.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='30, 15, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_lateral_curte_zugravit">
+				<Transform translation = "-12 0.5 25.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='30, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "geam_hol">
+				<Transform translation = "-12 0.5 25.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "geam.png"/>
+					</appearance>
+					<Box size='10, 7, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_mic_lateral_curte_zugravit">
+				<Transform translation = "13 0.5 15.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='20, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_mic_fata">
+				<Transform translation = "3 0.5 20.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_mic_fata_zugravit">
+				<Transform translation = "3 0.5 20.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='0.1, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_hol">
+				<Transform translation = "3 0.5 20.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_camera_mea">
+				<Transform translation = "3 0.5 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_camera_mea_zugravit">
+				<Transform translation = "3 0.5 5.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='0.1, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_camera_mea">
+				<Transform translation = "3 0.5 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_lemn.png"/>
+					</appearance>
+					<Box size='0.3, 12, 6' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_hol_interior">
+				<Transform translation = "-7 0.5 15.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='20, 15, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			<Transform DEF = "Perete_hol_interior_zugravit">
+				<Transform translation = "-7 0.5 15.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='20, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_living">
+				<Transform translation = "-5 0.5 15.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_lemn.png"/>
+					</appearance>
+					<Box size='6, 12, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_living">
+				<Transform translation = "-17 0.5 5.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+				
+			<Transform DEF = "Perete_living_zugravit">
+				<Transform translation = "-17 0.5 5.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='0.1, 15, 20' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_intre_hol_si_camara">
+				<Transform translation = "-22 0.5 15.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='10, 15, 0.3' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_intre_hol_si_camara_zugravit">
+				<Transform translation = "-22 0.5 15.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0">
+					</appearance>
+					<Box size='10, 15, 0.1' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_intre_hol_si_baie">
+				<Transform translation = "-17 0.5 20.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "brick.jpg"/>
+					</appearance>
+					<Box size='0.3, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Perete_intre_hol_si_baie_zugravit">
+				<Transform translation = "-17 0.5 20.3">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 0 0"/>
+					</appearance>
+					<Box size='0.1, 15, 10' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Usa_baie">
+				<Transform translation = "-17 0.5 20.5">
+				<shape>
+					<appearance>
+						<imagetexture url = "usa_baie.png"/>
+					</appearance>
+					<Box size='0.3, 12, 6' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<!--podea -->
+			<Transform DEF = "Podea">
+				<Transform translation = "-7 -7 15.8">
+				<shape>
+					<Extrusion crossSection='[(30,10), (30, -20), (-20, -20), (-20, 10), (30, 10)]'  height='0.6' solid='false'>
+					</Extrusion>
+					<appearance>
+						<imagetexture url = "parchet.jpg"/>
+						<!--<Material diffuseColor ="1 1 1"-->
+					</appearance>
+				</shape> 
+				</Transform>
+			</Transform>
+			<!-- Tavan-->
+			<Transform DEF = "Tavan">
+				<Transform translation = "-7 8 15.8">
+				<shape>
+					<Extrusion crossSection='[(30,10), (30, -20), (-20, -20), (-20, 10), (30, 10)]'  height='0.3' solid='false'>
+					</Extrusion>
+					<appearance>
+						<!--imagetexture url = "parchet.jpg"/-->
+						<Material diffuseColor = "1 1 1">
+					</appearance>
+				</shape>
+				</Transform>
+			</Transform>
+			<!--Acoperis-->
+			<Transform DEF = "Acoperis lateral">
+				<Transform rotation = "-1 0 0 0.65" translation = "-7 14 2.5">
+				<shape>
+					<Extrusion crossSection='[(20,10), (43, -20), (-20, -20), (-20, 10), (20, 10)]'  height='0.01' solid='true'>
+					</Extrusion>
+					<appearance>
+						<imagetexture url = "tigla.jpg">
+					</appearance>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "Acoperis lateral 2">
+				<Transform rotation = "1 0 0 0.65" translation = "-7 8.9 25">
+				<shape>
+					<Extrusion crossSection='[(43,10), (20, -20), (-20, -20), (-20, 10), (20, 10)]'  height='0.01' solid='true'>
+					</Extrusion>
+					<appearance>
+						<imagetexture url = "tigla.jpg">
+					</appearance>
+				</shape> 
+				</Transform>
+			</Transform>
+	
+			<Transform DEF = "Acoperis triunghi fata">
+				<Transform rotation = "0 0 -1 0.65" translation = "18.8 16 35">
+				<shape>
+					<Extrusion crossSection='[(25,3),(25,-53),(-7,-25)]'  height='0.01' solid='true'>
+					</Extrusion>
+					<appearance>
+						<imagetexture url = "tigla.jpg">
+					</appearance>
+				</shape> 
+				</Transform>
+			</Transform>
+			
+			<!--Background colors: sky and ground-->
+			<background groundAngle='0.1 1.309 1.5708' groundColor='0 .5 0 0 0.5 0.8 .4 0.7 0.5 0 0.8 0.5' skyAngle='0.1 0.15 1.309 1.571' skyColor='0.4 0.4 0.1 0.4 0.4 0.1 0 0.1 0.3 0 0.2 0.6 0.8 0.8 0.8'/>
+			
+		</scene> 
+				
+    </x3d>
+	
+
+	
+	</body>
+</html>  
