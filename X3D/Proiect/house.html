@@ -1349,6 +1349,17 @@
 				<Transform translation = "-20 0 3">
 				<shape>
 					<appearance>
+						<imagetexture url ="fructe.png"/>
+					</appearance>
+					<Box size='2, 2, 5' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "borcane">
+				<Transform translation = "-20 4 3">
+				<shape>
+					<appearance>
 						<imagetexture url ="borcane.png"/>
 					</appearance>
 					<Box size='2, 2, 5' solid='true'>
@@ -1356,17 +1367,27 @@
 				</shape> 
 				</Transform>
 			</Transform>
-			<Transform translation = "-20 4 3">
-				<shape>
-					<appearance>
-						<imagetexture url ="fructe.png"/>
-					</appearance>
-					<Box size='2, 2, 5' solid='true'>
-					</Box>
-				</shape> 
+			<!--lada frigorifica-->
+			<Transform DEF = "frigo">
+				<Transform translation = "-22 -4 13">
+				<Shape>
+					<Appearance>
+						<Material diffuseColor ="1 1 1"/>
+					</Appearance>
+					<Box size = "7,6,4"></Box>
+				</Shape>
 				</Transform>
-			
-			
+			</Transform>
+			<Transform DEF = "sus frigo">
+				<Transform translation = "-22 -1 13">
+				<Shape>
+					<Appearance>
+						<imagetexture url = "arctic.png"/>
+					</Appearance>
+					<Box size = "7,0.1,4"></Box>
+				</Shape>
+				</Transform>
+			</Transform>
 			<!-- Tavan-->
 			<!--<Transform DEF = "Tavan">
 				<Transform translation = "-7 8 15.8">
