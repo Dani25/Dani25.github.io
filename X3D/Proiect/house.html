@@ -15,7 +15,7 @@
 	
 	<body>
 	
-	<p>UI version number: 2018.06.1.0</p>
+	<p>UI version number: 2018.06.1.1</p>
 	
 	<x3d width='1200px' height='800px'> 
         <scene> 
@@ -231,7 +231,7 @@
 			</Transform>
 
 			<Transform DEF = "geam_camera_mea2">
-				<Transform translation = "13 2.5 15.3">
+				<Transform translation = "11 3 15.3">
 				<shape>
 					<appearance>
 						 <imagetexture url = "geam.png"/>
@@ -293,7 +293,7 @@
 				<Transform translation = "3.2 0.5 5">
 				<shape>
 					<appearance>
-						<Material diffuseColor = ".7 .6 .9"/>
+						<imagetexture url = "taper.png"/>
 					</appearance>
 					<Box size='0.1, 15, 19.7' solid='true'>
 					</Box>
@@ -806,6 +806,16 @@
 				</shape>
 				</Transform>
 			</Transform>
+			<Transform DEF = "tablou camera mea">
+				<Transform translation='18.8,4,15'>
+				<Shape>
+					<Appearance>
+						<imagetexture url = "tablou_camera.png"/>
+					</Appearance>
+					<Box size = "4,4,0.1"></Box>
+				</Shape>
+				</Transform>
+			</Transform>
 			<!--covor-->
 			<Transform DEF = "covor">
 				<Transform translation = "13.3 -5 6">
@@ -1047,11 +1057,33 @@
 					<Appearance>
 						<imagetexture url = "tablou.png"/>
 					</Appearance>
-					<Box size = "0.1,3,3"></Box>
+					<Box size = "0.1,4,4"></Box>
 				</Shape>
 				</Transform>
 			</Transform>
 			<!--end mobila-->
+			<!--mobilier hol-->
+			<Transform DEF = "lateral mobila4">
+				<Transform translation = "-3.5 -1 -1.8">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 1 1"/>
+					</appearance>
+					<Box size='0.1, 12, 4' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
+			</Transform>
+			<Transform DEF = "lateral mobila3">
+				<Transform translation = "-9.5 -1 -1.8">
+				<shape>
+					<appearance>
+						<Material diffuseColor = "1 1 1"/>
+					</appearance>
+					<Box size='0.1, 12, 4' solid='true'>
+					</Box>
+				</shape> 
+				</Transform>
 			
 			<!-- Tavan-->
 			<!--<Transform DEF = "Tavan">
